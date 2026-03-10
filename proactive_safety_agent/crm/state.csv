@@ -1,0 +1,26 @@
+policy_id,vin,status,notification_sent,ride_booked,repair_scheduled,fixed,recall_risk
+P001,VIN123TOYOTA,Recall Detected,True,True,True,False,Critical
+P002,VIN456HONDA,Standard,False,False,False,False,
+P003,VIN789FORD,Recall Detected,True,False,True,False,High Risk
+P004,VIN000TESLA,Standard,False,False,False,False,
+P005,VIN111TOYOTA,Recall Detected,True,True,True,False,Critical
+P006,VIN222HONDA,Standard,False,False,False,False,
+P007,VIN333FORD,Standard,False,False,False,False,
+P008,VIN444TESLA,Standard,False,False,False,False,
+P009,VIN555TOYOTA,Standard,False,False,False,False,
+P010,VIN666HONDA,Standard,False,False,False,False,
+P011,VIN777FORD,Recall Detected,True,False,True,False,High Risk
+P012,VIN888TESLA,Standard,False,False,False,False,
+P013,VIN999TOYOTA,Standard,False,False,False,False,
+P014,VIN010HONDA,Standard,False,False,False,False,
+P015,VIN011FORD,Standard,False,False,False,False,
+P016,VIN012TESLA,Standard,False,False,False,False,
+P017,VIN013TOYOTA,Standard,False,False,False,False,
+P018,VIN014HONDA,Standard,False,False,False,False,
+P019,VIN015FORD,Standard,False,False,False,False,
+P020,VIN016TESLA,Standard,False,False,False,False,
+P021,VIN017TOYOTA,Standard,False,False,False,False,
+P022,VIN018HONDA,Standard,False,False,False,False,
+P023,VIN019FORD,Standard,False,False,False,False,
+P024,VIN020TESLA,Standard,False,False,False,False,
+P025,VIN021TOYOTA,Standard,False,False,False,False,

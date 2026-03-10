@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety Command Center | Proactive Insurance</title>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --accent: #38bdf8;
+            --urgent: #fbbf24;
+            --safe: #10b981;
+            --text: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin: 0;
+            font-size: 2rem;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-trigger {
+            background: var(--accent);
+            color: var(--bg);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-trigger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 24px;
+            border-radius: 16px;
+        }
+
+        .metric-label {
+            color: var(--text-dim);
+            font-size: 0.875rem;
+            margin-bottom: 8px;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        th {
+            text-align: left;
+            padding: 16px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text-dim);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        td {
+            padding: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.875rem;
+        }
+
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .status-pending { background: rgba(251, 191, 36, 0.1); color: var(--urgent); }
+        .status-safe { background: rgba(16, 185, 129, 0.1); color: var(--safe); }
+        .status-detected { background: rgba(56, 189, 248, 0.1); color: var(--accent); }
+
+        .a2a-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+        }
+
+        .indicator-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #334155;
+        }
+
+        .indicator-active {
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        function Dashboard() {
+            const [data, setData] = useState([]);
+            const [loading, setLoading] = useState(false);
+
+            const fetchData = async () => {
+                try {
+                    const res = await fetch('http://localhost:8080/api/data');
+                    const json = await res.json();
+                    setData(json);
+                } catch (e) { console.error(e); }
+            };
+
+            useEffect(() => {
+                fetchData();
+                const interval = setInterval(fetchData, 3000); // Poll every 3s
+                return () => clearInterval(interval);
+            }, []);
+
+            const triggerAudit = async () => {
+                setLoading(true);
+                await fetch('http://localhost:8080/api/trigger', { method: 'POST' });
+                setTimeout(() => setLoading(false), 2000);
+            };
+
+            const stats = {
+                exposure: data.length,
+                dispatches: data.filter(d => d.ride_booked === 'True' || d.ride_booked === true).length,
+                scheduled: data.filter(d => d.repair_scheduled === 'True' || d.repair_scheduled === true).length
+            };
+
+            return (
+                <div className="container">
+                    <header>
+                        <div>
+                            <h1>Safety Command Center</h1>
+                            <p style={{color: 'var(--text-dim)', fontSize: '0.875rem'}}>Proactive Risk Management Dashboard</p>
+                        </div>
+                        <button className="btn-trigger" onClick={triggerAudit} disabled={loading}>
+                            {loading ? 'Initiating...' : '🚀 Run Global Audit'}
+                        </button>
+                    </header>
+
+                    <div className="metrics">
+                        <div className="card">
+                            <div className="metric-label">Policyholders at Risk</div>
+                            <div className="metric-value" style={{color: var(--urgent)}}>{stats.exposure}</div>
+                        </div>
+                        <div className="card">
+                            <div className="metric-label">Uber A2A Dispatches</div>
+                            <div className="metric-value" style={{color: var(--accent)}}>{stats.dispatches}</div>
+                        </div>
+                        <div className="card">
+                            <div className="metric-label">Repairs Negotiated</div>
+                            <div className="metric-value" style={{color: var(--safe)}}>{stats.scheduled}</div>
+                        </div>
+                    </div>
+
+                    <div className="card" style={{padding: 0}}>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Policy ID</th>
+                                    <th>VIN</th>
+                                    <th>Status</th>
+                                    <th>Partner Services (A2A)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {data.map(row => (
+                                    <tr key={row.policy_id}>
+                                        <td style={{fontWeight: 600}}>{row.policy_id}</td>
+                                        <td style={{fontFamily: 'monospace'}}>{row.vin}</td>
+                                        <td>
+                                            <span className={`status-badge status-${row.status.toLowerCase().replace(' ', '')}`}>
+                                                {row.status}
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div style={{display: 'flex', gap: '20px'}}>
+                                                <div className="a2a-indicator">
+                                                    <div className={`indicator-dot ${(row.ride_booked === 'True' || row.ride_booked === true) ? 'indicator-active' : ''}`}></div>
+                                                    Uber
+                                                </div>
+                                                <div className="a2a-indicator">
+                                                    <div className={`indicator-dot ${(row.repair_scheduled === 'True' || row.repair_scheduled === true) ? 'indicator-active' : ''}`}></div>
+                                                    Repair
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<Dashboard />);
+    </script>
+</body>
+</html>

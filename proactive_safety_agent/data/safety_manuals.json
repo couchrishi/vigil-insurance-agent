@@ -1,0 +1,5 @@
+{
+  "Airbag": "Repair Instructions: Contact authorized dealer immediately for inflator replacement. Do not allow passengers in the front seat until repaired. Severity: Level 1 (Life-threatening).",
+  "Brakes": "Repair Instructions: Check fluid levels and visit a service center within 48 hours. Avoid high-speed driving. Severity: Level 2 (High Risk).",
+  "Software": "Repair Instructions: Schedule an Over-the-Air (OTA) update via the vehicle settings menu. Severity: Level 3 (Feature Issue)."
+}

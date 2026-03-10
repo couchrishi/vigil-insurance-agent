@@ -1,0 +1,26 @@
+[
+  {
+    "recall_id": "R001",
+    "component": "Airbag",
+    "description": "Takata airbag inflator may rupture, sending metal fragments into the cabin.",
+    "severity": "Critical",
+    "affected_makes": [
+      "Toyota"
+    ],
+    "affected_years": [
+      2016
+    ]
+  },
+  {
+    "recall_id": "R002",
+    "component": "Brakes",
+    "description": "Brake fluid leak may increase stopping distance.",
+    "severity": "Urgent",
+    "affected_makes": [
+      "Ford"
+    ],
+    "affected_years": [
+      2019
+    ]
+  }
+]

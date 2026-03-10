@@ -1,0 +1,26 @@
+policy_id,name,email,phone,vin,make,year,model
+P001,John Doe,john.doe@example.com,555-0101,VIN123TOYOTA,Toyota,2016,Camry
+P002,Jane Smith,jane.smith@example.com,555-0102,VIN456HONDA,Honda,2017,Civic
+P003,Bob Brown,bob.brown@example.com,555-0103,VIN789FORD,Ford,2019,F-150
+P004,Alice Green,alice.green@example.com,555-0104,VIN000TESLA,Tesla,2022,Model 3
+P005,Charlie Wilson,charlie.w@example.com,555-0105,VIN111TOYOTA,Toyota,2016,Corolla
+P006,David Miller,d.miller@example.com,555-0106,VIN222HONDA,Honda,2017,Accord
+P007,Eve Davis,eve.d@example.com,555-0107,VIN333FORD,Ford,2018,Explorer
+P008,Frank Moore,frank.m@example.com,555-0108,VIN444TESLA,Tesla,2021,Model Y
+P009,Grace Taylor,grace.t@example.com,555-0109,VIN555TOYOTA,Toyota,2015,RAV4
+P010,Henry Anderson,henry.a@example.com,555-0110,VIN666HONDA,Honda,2015,CR-V
+P011,Isabel Thomas,isabel.t@example.com,555-0111,VIN777FORD,Ford,2019,Mustang
+P012,Jack Jackson,jack.j@example.com,555-0112,VIN888TESLA,Tesla,2022,Model S
+P013,Kelly White,kelly.w@example.com,555-0113,VIN999TOYOTA,Toyota,2017,Highlander
+P014,Liam Harris,liam.h@example.com,555-0114,VIN010HONDA,Honda,2016,Pilot
+P015,Mia Martin,mia.m@example.com,555-0115,VIN011FORD,Ford,2018,Edge
+P016,Noah Thompson,noah.t@example.com,555-0116,VIN012TESLA,Tesla,2023,Model X
+P017,Olivia Garcia,olivia.g@example.com,555-0117,VIN013TOYOTA,Toyota,2020,Prius
+P018,Paul Martinez,paul.m@example.com,555-0118,VIN014HONDA,Honda,2017,Odyssey
+P019,Quinn Robinson,quinn.r@example.com,555-0119,VIN015FORD,Ford,2021,Ranger
+P020,Rose Clark,rose.c@example.com,555-0120,VIN016TESLA,Tesla,2021,Model 3
+P021,Sam Rodriguez,sam.r@example.com,555-0121,VIN017TOYOTA,Toyota,2015,Sienna
+P022,Tina Lewis,tina.l@example.com,555-0122,VIN018HONDA,Honda,2016,Fit
+P023,Umar Lee,umar.l@example.com,555-0123,VIN019FORD,Ford,2018,Fusion
+P024,Vera Walker,vera.w@example.com,555-0124,VIN020TESLA,Tesla,2022,Model Y
+P025,Will Hall,will.h@example.com,555-0125,VIN021TOYOTA,Toyota,2017,Tacoma
