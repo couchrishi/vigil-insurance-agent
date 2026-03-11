@@ -10,8 +10,10 @@ theme:
     - navigation.sections
     - content.code.copy
 
+# This tells the browser how to actually DRAW the diagram
 extra_javascript:
   - https://unpkg.com/mermaid@10.3.0/dist/mermaid.min.js
+  - javascripts/mermaid-init.js
 
 nav:
   - Home: index.md
@@ -29,7 +31,3 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.arithmatex:
-      generic: true
-  - toc:
-      permalink: true
