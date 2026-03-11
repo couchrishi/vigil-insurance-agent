@@ -483,26 +483,26 @@
 
 
 
-<h1 id="agents-tools">Agents &amp; Tools<a class="headerlink" href="#agents-tools" title="Permanent link">&para;</a></h1>
+<h1 id="agents-tools">Agents &amp; Tools</h1>
 <p>The core of the system is composed of four specialized agents, each with a specific mission and set of capabilities.</p>
-<h2 id="1-monitoragent">1. MonitorAgent<a class="headerlink" href="#1-monitoragent" title="Permanent link">&para;</a></h2>
+<h2 id="1-monitoragent">1. MonitorAgent</h2>
 <p><strong>Mission</strong>: The "Eyes" of the system.
 - <strong>Tools</strong>:
     - <code>fetch_recalls</code>: Simulated scan of NHTSA database.
     - <code>get_affected_policyholders</code>: Cross-references VINs with the policy database.
     - <code>update_crm_dashboard</code>: Marks vehicles as "Recall Detected".</p>
-<h2 id="2-triageagent">2. TriageAgent<a class="headerlink" href="#2-triageagent" title="Permanent link">&para;</a></h2>
+<h2 id="2-triageagent">2. TriageAgent</h2>
 <p><strong>Mission</strong>: The "Brains" of the system.
 - <strong>Tools</strong>:
     - <code>search_safety_manual</code>: Performs a RAG-style search over vehicle manuals to understand specific risks (e.g., "Airbag inflator rupture").
     - <code>update_crm_dashboard</code>: Upgrades status to "Critical" or "High Risk".</p>
-<h2 id="3-outreachagent">3. OutreachAgent<a class="headerlink" href="#3-outreachagent" title="Permanent link">&para;</a></h2>
+<h2 id="3-outreachagent">3. OutreachAgent</h2>
 <p><strong>Mission</strong>: The "Arms" of the system (Action-oriented).
 - <strong>Tools</strong>:
     - <code>dispatch_uber_a2a</code> (Rebranded as <strong>Waymo</strong>): Triggers an Agent-to-Agent protocol to send an autonomous vehicle.
     - <code>book_dealer_repair_a2a</code>: Coordinates with the Repair Agent to schedule a priority service slot.
     - <code>update_crm_dashboard</code>: Sets <code>ride_booked</code> and <code>repair_scheduled</code> flags.</p>
-<h2 id="4-followupagent">4. FollowUpAgent<a class="headerlink" href="#4-followupagent" title="Permanent link">&para;</a></h2>
+<h2 id="4-followupagent">4. FollowUpAgent</h2>
 <p><strong>Mission</strong>: The "Safety Net".
 - <strong>Trigger</strong>: Activated via the "Fast Forward 30 Days" simulation.
 - <strong>Tools</strong>:
@@ -563,6 +563,8 @@
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10.3.0/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/mermaid-init.js"></script>
       
     
   </body>

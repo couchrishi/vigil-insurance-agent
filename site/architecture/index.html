@@ -463,9 +463,9 @@
 
 
 
-<h1 id="system-architecture">System Architecture<a class="headerlink" href="#system-architecture" title="Permanent link">&para;</a></h1>
+<h1 id="system-architecture">System Architecture</h1>
 <p>The Vigil Insurance ecosystem is built as a multi-agent team using the <strong>Google Agent Development Kit (ADK)</strong>. </p>
-<h2 id="workflow-overview">Workflow Overview<a class="headerlink" href="#workflow-overview" title="Permanent link">&para;</a></h2>
+<h2 id="workflow-overview">Workflow Overview</h2>
 <p>The system follows a strict, linear pipeline to ensure safety and data integrity:</p>
 <ol>
 <li><strong>Monitor</strong>: Scans for recalls and matches them to policyholders.</li>
@@ -473,7 +473,7 @@
 <li><strong>Outreach</strong>: Executes autonomous partner dispatches (A2A).</li>
 <li><strong>Follow-up</strong>: Escalates stalled repairs after a time jump.</li>
 </ol>
-<h2 id="visualizing-the-flow">Visualizing the Flow<a class="headerlink" href="#visualizing-the-flow" title="Permanent link">&para;</a></h2>
+<h2 id="visualizing-the-flow">Visualizing the Flow</h2>
 <pre class="mermaid"><code>graph TD
     User((User)) -- Trigger Audit --&gt; Backend[FastAPI Backend]
     Backend -- Prompt --&gt; Orchestrator[Proactive Safety Team]
@@ -493,7 +493,7 @@
 
     CRM -- Polling --&gt; Dashboard[React Command Center]
     Activity[(activity.json)] -- Telemetry --&gt; Dashboard</code></pre>
-<h2 id="data-persistence">Data Persistence<a class="headerlink" href="#data-persistence" title="Permanent link">&para;</a></h2>
+<h2 id="data-persistence">Data Persistence</h2>
 <ul>
 <li><strong><code>state.csv</code></strong>: Serves as the single source of truth for policyholder lifecycle states.</li>
 <li><strong><code>activity.json</code></strong>: Captures real-time tool execution for the dashboard's "Autonomous Agent Activity" feed.</li>
@@ -554,6 +554,8 @@
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10.3.0/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/mermaid-init.js"></script>
       
     
   </body>

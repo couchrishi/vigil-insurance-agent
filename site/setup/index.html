@@ -619,43 +619,43 @@
 
 
 
-<h1 id="setup-guide">Setup Guide<a class="headerlink" href="#setup-guide" title="Permanent link">&para;</a></h1>
+<h1 id="setup-guide">Setup Guide</h1>
 <p>Follow these steps to get the Proactive Safety Agent and Command Center running on your local machine.</p>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li><strong>Python 3.11+</strong></li>
 <li><strong>Node.js 18+</strong> &amp; <strong>npm</strong></li>
 <li><strong>Google Cloud SDK (gcloud)</strong> authenticated with Vertex AI permissions.</li>
 </ul>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<h3 id="1-clone-the-repository">1. Clone the Repository<a class="headerlink" href="#1-clone-the-repository" title="Permanent link">&para;</a></h3>
+<h2 id="installation">Installation</h2>
+<h3 id="1-clone-the-repository">1. Clone the Repository</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/couchrishi/vigil-insurance-agent.git
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>vigil-insurance-agent
 </code></pre></div>
-<h3 id="2-backend-setup">2. Backend Setup<a class="headerlink" href="#2-backend-setup" title="Permanent link">&para;</a></h3>
+<h3 id="2-backend-setup">2. Backend Setup</h3>
 <p>Create a virtual environment and install the required Python packages:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">source</span><span class="w"> </span>venv/bin/activate
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>pip<span class="w"> </span>install<span class="w"> </span>pandas<span class="w"> </span>uvicorn<span class="w"> </span>fastapi<span class="w"> </span>google-adk<span class="w"> </span>google-genai<span class="w"> </span>python-dotenv
 </code></pre></div></p>
-<h3 id="3-frontend-setup">3. Frontend Setup<a class="headerlink" href="#3-frontend-setup" title="Permanent link">&para;</a></h3>
+<h3 id="3-frontend-setup">3. Frontend Setup</h3>
 <p>Install the dashboard dependencies:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>safety-command-center-main
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>npm<span class="w"> </span>install
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">cd</span><span class="w"> </span>..
 </code></pre></div></p>
-<h3 id="4-configuration">4. Configuration<a class="headerlink" href="#4-configuration" title="Permanent link">&para;</a></h3>
+<h3 id="4-configuration">4. Configuration</h3>
 <p>Create a <code>.env</code> file in the root directory:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>GOOGLE_API_KEY=your_api_key_here
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>GOOGLE_CLOUD_PROJECT=your_project_id
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>GOOGLE_CLOUD_LOCATION=us-central1
 </code></pre></div></p>
-<h2 id="running-the-demo">Running the Demo<a class="headerlink" href="#running-the-demo" title="Permanent link">&para;</a></h2>
-<h3 id="1-reset-data-optional">1. Reset Data (Optional)<a class="headerlink" href="#1-reset-data-optional" title="Permanent link">&para;</a></h3>
+<h2 id="running-the-demo">Running the Demo</h2>
+<h3 id="1-reset-data-optional">1. Reset Data (Optional)</h3>
 <p>To start with a clean slate (clears CRM and activity logs):
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python3<span class="w"> </span>reset_demo.py
 </code></pre></div></p>
-<h3 id="2-start-the-ecosystem">2. Start the Ecosystem<a class="headerlink" href="#2-start-the-ecosystem" title="Permanent link">&para;</a></h3>
+<h3 id="2-start-the-ecosystem">2. Start the Ecosystem</h3>
 <p>This command launches both the FastAPI backend (port 8081) and the Vite frontend (port 8080):
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python3<span class="w"> </span>start_dashboard.py
 </code></pre></div></p>
@@ -715,6 +715,8 @@
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10.3.0/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/mermaid-init.js"></script>
       
     
   </body>
