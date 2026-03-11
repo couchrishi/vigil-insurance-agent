@@ -1,4 +1,5 @@
 site_name: Vigil Insurance - Proactive Safety Agent
+site_url: https://couchrishi.github.io/vigil-insurance-agent/
 theme:
   name: material
   palette:
@@ -8,6 +9,9 @@ theme:
   features:
     - navigation.sections
     - content.code.copy
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10.3.0/dist/mermaid.min.js
 
 nav:
   - Home: index.md
@@ -25,3 +29,7 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.arithmatex:
+      generic: true
+  - toc:
+      permalink: true
